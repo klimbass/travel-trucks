@@ -1,0 +1,25 @@
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 64px;
+  translate: 0 -50%;
+}
+
+.boxBar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 28px;
+  background-color: #f7f7f7;
+}
+.link {
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
+  text-decoration: none;
+}
+.link.active {
+  color: #e44848;
+}
