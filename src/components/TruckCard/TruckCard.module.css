@@ -24,19 +24,6 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  max-height: 110px;
-  overflow: hidden;
-}
-
-.features li {
-  padding: 12px 18px;
-  background-color: #f2f4f7;
-  border-radius: 100px;
-}
 
 .title {
   color: #101828;
@@ -92,15 +79,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   color: #475467;
-}
-
-.feature {
-  text-transform: capitalize;
-  color: #101828;
-  font-size: 16px;
-  display: flex;
-  gap: 8px;
-  align-items: center;
 }
 
 .showMoreBtn {

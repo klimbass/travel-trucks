@@ -10,7 +10,7 @@ export const fetchTrucks = createAsyncThunk(
       console.log(`starts fetch`);
 
       const response = await axios.get('/campers');
-      console.log(`response fetch requests = ${response.data}`);
+      // console.log(`response fetch requests = ${response.data}`);
 
       return response.data.items;
     } catch (e) {

@@ -1,4 +1,14 @@
 :root {
+  --main-text-color: #101828;
+  --secondary-text-color: #475467;
+  --grey-color: #6c717b;
+  --button-color: #e44848;
+  --button-hover-color: #d84343;
+  --rating-color: #ffc531;
+  --gray-light-color: #dadde1;
+  --badges-color: #f2f4f7;
+  --inputs-color: #f7f7f7;
+  --white-color: #ffffff;
 }
 
 body {

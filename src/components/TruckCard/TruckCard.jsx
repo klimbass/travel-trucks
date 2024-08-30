@@ -3,6 +3,7 @@ import css from './TruckCard.module.css';
 import Icons from '../../img/Icons/Icons.jsx';
 import { useState } from 'react';
 import clsx from 'clsx';
+import FeaturesList from '../FeaturesList/FeaturesList.jsx';
 
 export default function TruckCard({ item }) {
   const [isFavour, setIsFavour] = useState(false);
@@ -52,24 +53,8 @@ export default function TruckCard({ item }) {
           </button>
         </div>
         <div className={css.description}>{item.description}</div>
-
-        <ul className={css.features}>
-          {features.length > 0 &&
-            features.map(key => {
-              console.log(key);
-
-              return (
-                <li
-                  key={`${item.name}${key}${item.id}`}
-                  className={css.feature}
-                >
-                  <Icons iconName={`icon-${key}`} width={20} height={20} />
-                  {key}
-                </li>
-              );
-            })}
-        </ul>
-        <Link to={`/catalog/${item.id}`} className={css.showMoreBtn}>
+        <FeaturesList features={features} item={item} />
+        <Link to={`/catalog/${item.id}/features`} className={css.showMoreBtn}>
           Show more
         </Link>
       </div>

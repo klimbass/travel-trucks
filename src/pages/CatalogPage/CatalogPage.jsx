@@ -7,13 +7,7 @@ import CatalogList from '../../components/CatalogList/CatalogList.jsx';
 import AsidePanel from '../../components/AsidePanel/AsidePanel.jsx';
 
 export default function Catalog() {
-  const dispatch = useDispatch();
   const { items, isLoading, error } = useSelector(getTrucks);
-
-  useEffect(() => {
-    dispatch(fetchTrucks());
-  }, [dispatch]);
-  console.dir(items);
 
   return (
     <div className={css.wrap}>

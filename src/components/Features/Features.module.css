@@ -1,0 +1,40 @@
+.featuresBox {
+  background-color: #f7f7f78b;
+  padding: 44px 52px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.vehicleDetails h3 {
+  color: inherit;
+  font-size: 20px;
+  line-height: 1.2;
+  border-bottom: 2px solid var(--badges-color);
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.vehicleDetails table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+}
+
+.vehicleDetails th {
+  text-align: left;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 2.4;
+  font-weight: 450;
+}
+
+.vehicleDetails td {
+  text-align: right;
+  text-transform: capitalize;
+}
+
+.vehicleDetails tr {
+  border: none;
+}

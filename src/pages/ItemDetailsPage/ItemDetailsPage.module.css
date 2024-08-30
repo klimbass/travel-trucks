@@ -1,0 +1,7 @@
+.boxPage {
+  padding: 48px 64px;
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+}
