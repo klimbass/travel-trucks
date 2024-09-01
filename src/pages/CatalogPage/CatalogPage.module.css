@@ -1,6 +1,7 @@
 .wrap {
   display: flex;
   flex-direction: row;
+  gap: 70px;
   padding: 40px 64px;
   justify-content: space-around;
 }

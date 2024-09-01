@@ -1,7 +1,31 @@
 .boxPage {
   padding: 48px 64px;
 }
-.footer {
+.tabBox {
   display: flex;
   flex-direction: row;
+  gap: 40px;
+}
+
+.link {
+  position: relative;
+  text-decoration: none;
+  color: var(--main-text-color);
+}
+.activeLink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -24px;
+  height: 4px;
+  width: 100%;
+  background-color: var(--button-color);
+  transition: width 0.3s ease-in-out;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding: 60px;
 }

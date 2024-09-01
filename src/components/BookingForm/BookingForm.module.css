@@ -1,0 +1,26 @@
+.formBox {
+  background-color: transparent;
+  border-radius: 10px;
+  border: 1px solid var(--gray-light-color);
+  padding: 44px;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formField {
+  display: block;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--inputs-color);
+  padding: 18px;
+  outline: none;
+  color: var(--main-text-color);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}

@@ -1,0 +1,22 @@
+.vehicleTypeBox {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  position: relative;
+}
+.vehicleTypeBox::after {
+  content: ' ';
+  position: absolute;
+  top: 50px;
+  background-color: var(--gray-light-color);
+  height: 1px;
+  width: 100%;
+}
+.title {
+}
+
+.checkBox {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}

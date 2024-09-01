@@ -3,13 +3,13 @@ import css from './Features.module.css';
 import { useParams } from 'react-router-dom';
 import FeaturesList from '../FeaturesList/FeaturesList.jsx';
 import { getTrucks } from '../../redux/selectors.js';
+import { CircularProgress } from '@mui/material';
 
 export default function Features() {
   const { items, isLoading, error } = useSelector(getTrucks);
   const { id } = useParams();
 
   const item = items?.find(item => item.id === id);
-  console.log(item);
 
   const features = item
     ? Object.keys(item).filter(key => item[key] === true)
@@ -17,7 +17,7 @@ export default function Features() {
 
   return (
     <div className={css.featuresBox}>
-      {isLoading && <p>Loading...</p>}
+      {isLoading && !error && <CircularProgress color="primary" />}
       {error && <p>Something went wrong...</p>}
       {!isLoading && !error && (
         <>

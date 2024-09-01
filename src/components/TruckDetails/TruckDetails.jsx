@@ -10,7 +10,7 @@ export default function TruckDetails({ item }) {
         <h2 className={css.title}>{item.name}</h2>
         <div className={css.boxRatMap}>
           <div className={css.rating}>
-            <Icons iconName="icon-star" />
+            <Icons iconName="icon-star" className={css.colorStar} />
             <p>{`${item.rating}/(${item.reviews.length} Reviews)`}</p>
           </div>
           <div className={css.rating}>

@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: row;
   gap: 24px;
-  border: 1px solid #dadde1;
+  border: 1px solid var(--gray-light-color);
   border-radius: 20px;
 }
 .truckImg {
@@ -13,8 +13,6 @@
   border-radius: 10px;
   max-width: 292px;
   max-height: 320px;
-  /* width: 100%; */
-  /* height: auto; */
   overflow: hidden;
   object-fit: cover;
 }
@@ -26,7 +24,7 @@
 }
 
 .title {
-  color: #101828;
+  color: var(--main-text-color);
   font-weight: 600;
   margin-bottom: 8px;
   font-size: 24px;
@@ -46,12 +44,14 @@
   gap: 4px;
   align-items: center;
 
-  color: #101828;
+  color: var(--main-text-color);
   font-weight: 400;
   font-family: inherit;
   letter-spacing: 0.5px;
 }
-
+.colorStar {
+  fill: var(--rating-color);
+}
 .price {
   position: absolute;
   right: 54px;
@@ -62,7 +62,7 @@
   display: flex;
   gap: 10px;
   font-weight: 500;
-  color: #101828;
+  color: var(--main-text-color);
 }
 .heart {
   border: none;
@@ -70,7 +70,7 @@
   padding: 2px 0 0 0;
 }
 .iconFav {
-  fill: #e44848;
+  fill: var(--button-color);
 }
 
 .description {
@@ -78,7 +78,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #475467;
+  color: var(--secondary-text-color);
 }
 
 .showMoreBtn {
@@ -88,17 +88,16 @@
   border: none;
   border-radius: 30px;
   padding: 16px 16px;
-  background-color: #e44848;
-  color: #ffffff;
+  background-color: var(--button-color);
+  color: var(--white-color);
   cursor: pointer;
   max-width: 166px;
   transition: background-color 250ms linear;
   &:hover {
-    background-color: #d84343;
+    background-color: var(--button-hover-color);
   }
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(212, 66, 66, 0.5);
-    background-color: #d84343;
+    background-color: var(--button-hover-color);
   }
 }

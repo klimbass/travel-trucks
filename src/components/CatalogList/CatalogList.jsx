@@ -1,19 +1,31 @@
 import TruckCard from '../TruckCard/TruckCard.jsx';
 import css from './CatalogList.module.css';
+import { Button } from '@mui/material';
 
-export default function CatalogList({ items }) {
+export default function CatalogList({ pItems, loadMore, handleClick }) {
   return (
-    <ul className={css.list}>
-      {items.length > 0 &&
-        items.map(item => {
-          console.log(item);
+    <div className={css.listWrap}>
+      <ul className={css.list}>
+        {pItems.length > 0 &&
+          pItems.map(item => {
+            // console.log(item);
 
-          return (
-            <li key={item.id}>
-              <TruckCard item={item} />
-            </li>
-          );
-        })}
-    </ul>
+            return (
+              <li key={item.id}>
+                <TruckCard item={item} />
+              </li>
+            );
+          })}
+      </ul>
+      {loadMore && (
+        <Button
+          variant="secondary"
+          sx={{ margin: '0 auto' }}
+          onClick={handleClick}
+        >
+          Load more
+        </Button>
+      )}
+    </div>
   );
 }

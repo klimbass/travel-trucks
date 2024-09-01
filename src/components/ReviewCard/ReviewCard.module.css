@@ -1,0 +1,45 @@
+.nameBox {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.firstLetter {
+  background-color: var(--badges-color);
+  color: var(--button-color);
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 60px;
+}
+.name {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--main-text-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.starList {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.starGold {
+  fill: var(--rating-color);
+}
+
+.starGrey {
+  fill: var(--gray-light-color);
+}
+
+.comment {
+  margin-top: 16px;
+  color: var(--secondary-text-color);
+  font-size: 16px;
+  line-height: 1.5;
+}

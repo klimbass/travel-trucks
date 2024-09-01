@@ -11,15 +11,15 @@
   justify-content: center;
   gap: 32px;
   padding: 24px;
-  background-color: #f7f7f7;
+  background-color: var(--inputs-color);
 }
 .link {
   font-family: inherit;
   font-size: 16px;
   line-height: 1.5;
-  color: #101828;
+  color: var(--main-text-color);
   text-decoration: none;
 }
 .link.active {
-  color: #e44848;
+  color: var(--button-color);
 }
