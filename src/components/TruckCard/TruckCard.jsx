@@ -7,10 +7,20 @@ import FeaturesList from '../FeaturesList/FeaturesList.jsx';
 import { Button } from '@mui/material';
 
 export default function TruckCard({ item }) {
-  const [isFavour, setIsFavour] = useState(false);
+  const [isFavour, setIsFavour] = useState(item.favor === 'fav');
 
-  const setFavourHandle = ev => {
+  const setFavourHandle = carId => {
     setIsFavour(isFavour => !isFavour);
+
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+    if (favorites.includes(carId)) {
+      favorites = favorites.filter(id => id !== carId);
+    } else {
+      favorites.push(carId);
+    }
+
+    localStorage.setItem('favorites', JSON.stringify(favorites));
   };
 
   const className = clsx({ [css.iconFav]: isFavour });
@@ -51,7 +61,11 @@ export default function TruckCard({ item }) {
         </div>
         <div className={css.topic}>
           <h2>€{formattedNumber(item)}</h2>
-          <button className={css.heart} type="button" onClick={setFavourHandle}>
+          <button
+            className={css.heart}
+            type="button"
+            onClick={() => setFavourHandle(item.id)}
+          >
             <Icons
               iconName="icon-heart"
               width="24"

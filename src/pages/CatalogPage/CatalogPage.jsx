@@ -10,8 +10,20 @@ import { toast } from 'react-toastify';
 export default function Catalog() {
   const { items, isLoading, error } = useSelector(getTrucks);
 
+  const itemsListWithFav = items => {
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    return items.reduce((acc, item) => {
+      favorites.find(id => id === item.id)
+        ? acc.unshift({ ...item, favor: 'fav' })
+        : acc.push(item);
+      return acc;
+    }, []);
+  };
+  const favItems = itemsListWithFav(items);
+  console.log(favItems);
+
   const [perPage, setPerPage] = useState(4);
-  const paginationItems = items.slice(0, perPage);
+  const paginationItems = favItems.slice(0, perPage);
   const loadMore = paginationItems.length < items.length;
   const handleClick = () => {
     setPerPage(perPage => perPage + perPage);
