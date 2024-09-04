@@ -1,26 +1,28 @@
 import { useState } from 'react';
-import css from '../ToggleButton/ToggleButton.module.css';
+import css from './RadioButton.module.css';
 import clsx from 'clsx';
 import Icons from '../../img/Icons/Icons.jsx';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectorGetFormFilter } from '../../redux/selectors.js';
+import { setNameFilter } from '../../redux/filtersSlice.js';
 
-export default function RadioButton({
-  name,
-  setNameActiveBtn,
-  isActive,
-  onClick,
-}) {
-  //   const [isActive, setIsActive] = useState(false);
-  const classList = clsx(css.btn, { [css.active]: isActive });
+export default function RadioButton({ name, label }) {
+  const setFilter = useSelector(selectorGetFormFilter);
+  console.log(setFilter);
 
-  //   const handleClick = () => {
-  //     setIsActive(!isActive);
-  //     setNameActiveBtn({ [name]: !isActive });
-  //   };
+  const classList = clsx(css.btn, { [css.active]: name === setFilter });
+  const dispatch = useDispatch();
+
+  const handleButtonClick = () => {
+    console.log({ form: name });
+
+    dispatch(setNameFilter({ form: name }));
+  };
 
   return (
-    <button className={classList} onClick={onClick}>
+    <button className={classList} onClick={handleButtonClick}>
       <Icons iconName={`icon-${name}`} width={32} height={32} />
-      {name}
+      {label}
     </button>
   );
 }

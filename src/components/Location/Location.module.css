@@ -1,21 +1,7 @@
-.locationInput__control {
-  border: none;
-  border-radius: 12px;
-  background-color: brown;
-  width: 400px;
+.container {
+  min-width: 100%;
 }
 
-.locationInput__menu {
-  border-radius: 12px;
-  background-color: white;
-}
-
-.locationInput__option--is-selected {
-  background-color: darkred;
-  color: white;
-}
-
-.locationInput__value-container {
-  background-color: blue;
-  color: red;
+.icon {
+  fill: red;
 }

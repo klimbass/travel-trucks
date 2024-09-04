@@ -1,7 +1,8 @@
 .wrap {
   display: flex;
   flex-direction: row;
-  gap: 70px;
+  gap: 52px;
   padding: 40px 64px;
   justify-content: space-around;
+  width: 100%;
 }

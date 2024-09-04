@@ -3,6 +3,10 @@ import Location from '../Location/Location.jsx';
 import VehicleEquipment from '../VehicleEquipment/VehicleEquipment.jsx';
 import VehicleType from '../VehicleType/VehicleType.jsx';
 import css from './AsidePanel.module.css';
+import { Button } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { delAllFilters } from '../../redux/filtersSlice.js';
+import { getStatusFilter } from '../../redux/selectors.js';
 
 export default function AsidePanel({ items }) {
   const [itemsDef, setItemsDef] = useState([]);
@@ -12,12 +16,26 @@ export default function AsidePanel({ items }) {
       setItemsDef(items);
     }
   }, [items]);
+
+  const dispatch = useDispatch();
+  const handleClearFilters = () => {
+    dispatch(delAllFilters());
+  };
+
   return (
     <div className={css.asidePanel}>
       <Location items={itemsDef} />
       <p className={css.filtersTitle}>Filters</p>
       <VehicleEquipment items={itemsDef} />
       <VehicleType />
+      <Button
+        type="button"
+        variant="shane"
+        sx={{ width: '180px' }}
+        onClick={handleClearFilters}
+      >
+        Reset
+      </Button>
     </div>
   );
 }

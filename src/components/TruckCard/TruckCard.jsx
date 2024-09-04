@@ -12,7 +12,7 @@ export default function TruckCard({ item }) {
   const setFavourHandle = carId => {
     setIsFavour(isFavour => !isFavour);
 
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    let favorites = JSON.parse(window.localStorage.getItem('favorites')) || [];
 
     if (favorites.includes(carId)) {
       favorites = favorites.filter(id => id !== carId);
@@ -77,7 +77,7 @@ export default function TruckCard({ item }) {
         <div className={css.description}>{item.description}</div>
         <FeaturesList features={features} item={item} />
         <Link to={`/catalog/${item.id}/features`}>
-          <Button variant="prima">Show more</Button>
+          <Button variant="shane">Show more</Button>
         </Link>
       </div>
     </div>

@@ -1,35 +1,33 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import { statusFilters } from './constants';
 
 const filtersSlice = createSlice({
   name: 'filters',
   initialState: {
-    // status: statusFilters.all,
-    status: [],
-    // status: '',
+    status: {},
   },
   reducers: {
-    setStatusFilter(state, action) {
-      const newFilter = action.payload;
-
-      const index = state.status.findIndex(
-        item => Object.keys(item)[0] === Object.keys(newFilter)[0]
-      );
-      if (index >= 0) {
-        state.status[index] = newFilter;
-      } else {
-        state.status = [...state.status, newFilter];
-      }
+    setLocationFilter(state, action) {
+      const newLocation = action.payload;
+      state.status = { ...state.status, location: newLocation };
     },
-    delStatusFilter(state, action) {
-      const keyFilterToRemove = Object.keys(action.payload)[0];
-      const status = state.status.filter(
-        filter => Object.keys(filter)[0] !== keyFilterToRemove
-      );
-      state.status = [...status];
+    setNameFilter(state, action) {
+      state.status = { ...state.status, ...action.payload };
+    },
+    delAllFilters(state, action) {
+      state.status = {};
+    },
+    toggleFilter(state, action) {
+      const filterName = action.payload;
+      const { [action.payload]: currentFilterState } = state.status;
+      state.status = {
+        ...state.status,
+        [filterName]:
+          currentFilterState === undefined ? true : !currentFilterState,
+      };
     },
   },
 });
 
-export const { setStatusFilter, delStatusFilter } = filtersSlice.actions;
+export const { delAllFilters, toggleFilter, setLocationFilter, setNameFilter } =
+  filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;

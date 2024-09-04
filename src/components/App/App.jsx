@@ -16,6 +16,8 @@ import { getStatusFilter } from '../../redux/selectors.js';
 
 function App() {
   const filters = useSelector(getStatusFilter);
+  console.log(filters);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchTrucks(filters));

@@ -11,7 +11,7 @@ export default function Catalog() {
   const { items, isLoading, error } = useSelector(getTrucks);
 
   const itemsListWithFav = items => {
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    let favorites = JSON.parse(window.localStorage.getItem('favorites')) || [];
     return items.reduce((acc, item) => {
       favorites.find(id => id === item.id)
         ? acc.unshift({ ...item, favor: 'fav' })

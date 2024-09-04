@@ -8,3 +8,5 @@ export const getTruckDetails = (id, state) => {
 };
 
 export const getStatusFilter = state => state.filters.status;
+export const selectorGetLocation = state => state.filters.status.location;
+export const selectorGetFormFilter = state => state.filters.status.form;
