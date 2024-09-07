@@ -18,7 +18,7 @@ export default function TruckDetails({ item }) {
             <p>{location}</p>
           </div>
         </div>
-        <h2>€8000,00</h2>
+        <h2 className={css.price}>€8000,00</h2>
       </div>
       <ul className={css.imgList}>
         {item.gallery.map(gal => (

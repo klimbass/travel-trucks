@@ -1,5 +1,5 @@
 .featuresBox {
-  background-color: #f7f7f78b;
+  background-color: var(--features-backColor);
   padding: 44px 52px;
   border-radius: 10px;
   display: flex;
@@ -9,7 +9,7 @@
 
 .vehicleDetails h3 {
   color: inherit;
-  font-size: 20px;
+  font-size: var(--h3-font-size);
   line-height: 1.2;
   border-bottom: 2px solid var(--badges-color);
   padding-bottom: 16px;
@@ -25,7 +25,7 @@
 .vehicleDetails th {
   text-align: left;
   font-weight: normal;
-  font-size: 16px;
+  font-size: var(--base-font-size);
   line-height: 2.4;
   font-weight: 450;
 }

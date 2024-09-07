@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
 import HomePage from '../../pages/HomePage/HomePage.jsx';
 import CatalogPage from '../../pages/CatalogPage/CatalogPage.jsx';
 import ItemDetailsPage from '../../pages/ItemDetailsPage/ItemDetailsPage.jsx';
@@ -16,7 +15,6 @@ import { getStatusFilter } from '../../redux/selectors.js';
 
 function App() {
   const filters = useSelector(getStatusFilter);
-  console.log(filters);
 
   const dispatch = useDispatch();
   useEffect(() => {

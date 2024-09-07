@@ -8,14 +8,11 @@ import { setNameFilter } from '../../redux/filtersSlice.js';
 
 export default function RadioButton({ name, label }) {
   const setFilter = useSelector(selectorGetFormFilter);
-  console.log(setFilter);
 
   const classList = clsx(css.btn, { [css.active]: name === setFilter });
   const dispatch = useDispatch();
 
   const handleButtonClick = () => {
-    console.log({ form: name });
-
     dispatch(setNameFilter({ form: name }));
   };
 

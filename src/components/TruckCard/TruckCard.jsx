@@ -60,7 +60,7 @@ export default function TruckCard({ item }) {
           </div>
         </div>
         <div className={css.topic}>
-          <h2>€{formattedNumber(item)}</h2>
+          <h2 className={css.price}>€{formattedNumber(item)}</h2>
           <button
             className={css.heart}
             type="button"

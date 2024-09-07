@@ -1,4 +1,5 @@
 import { createTheme } from '@mui/material';
+import zIndex from '@mui/material/styles/zIndex';
 
 const theme = createTheme({
   components: {
@@ -12,8 +13,8 @@ const theme = createTheme({
             borderRadius: '200px',
             border: '2px solid var(--gray-light-color)',
             padding: '16px 34px',
-            fontSize: '16px',
-            fontFamily: 'Inter, sans-serif',
+            fontSize: 'var(--button-font-size)',
+            fontFamily: 'var(--button-font)',
             textTransform: 'none',
             width: 'fit-content',
             '&:hover': {
@@ -30,8 +31,8 @@ const theme = createTheme({
             border: 'none',
             padding: '16px 36px',
             textTransform: 'none',
-            fontSize: '16px',
-            fontFamily: 'Inter, sans-serif',
+            fontSize: 'var(--button-font-size)',
+            fontFamily: 'var(--button-font)',
             width: 'fit-content',
             '&:hover': {
               backgroundColor: 'var(--button-color)',
@@ -44,18 +45,24 @@ const theme = createTheme({
             position: 'relative',
             overflow: 'hidden',
             color: 'var(--inputs-color)',
-            backgroundColor: 'var(--button-hover-color)',
-            borderRadius: '200px',
+            // backgroundColor: 'var(--button-hover-color)',
+            backgroundImage: 'var(--button-gradient-color)',
+            backgroundColor: 'var(--inputs-color)',
+            opacity: '0.8',
+            borderRadius: '16px',
             border: 'none',
             padding: '16px 36px',
             textTransform: 'none',
-            fontSize: '16px',
-            fontFamily: 'Inter, sans-serif',
+            fontSize: 'var(--button-font-size)',
+            fontFamily: 'var(--button-font)',
             cursor: 'pointer',
-            transition: 'background-color 450ms linear',
+            transition: 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out',
             '&:hover': {
-              backgroundColor: 'var(--button-color)',
+              transform: 'scale(1.03)',
+              boxShadow: 'var(--box-shadow-heavy)',
+              opacity: '1',
             },
+
             '&::before': {
               content: '""',
               position: 'absolute',
@@ -77,10 +84,10 @@ const theme = createTheme({
     MuiCircularProgress: {
       styleOverrides: {
         root: {
-          color: '#e44848',
+          color: 'var(--button-color)',
           position: 'absolute',
           left: '50%',
-          transform: 'translate(-50%, 0)',
+          transform: 'translate(0,-50%)',
         },
       },
     },

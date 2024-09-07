@@ -20,7 +20,6 @@ export default function Catalog() {
     }, []);
   };
   const favItems = itemsListWithFav(items);
-  console.log(favItems);
 
   const [perPage, setPerPage] = useState(4);
   const paginationItems = favItems.slice(0, perPage);
@@ -30,7 +29,9 @@ export default function Catalog() {
   };
   useEffect(() => {
     if (error) {
-      toast.error('We have not this set');
+      toast.error('Sorry, we have not this set', {
+        autoClose: false,
+      });
     }
   }, [error]);
 

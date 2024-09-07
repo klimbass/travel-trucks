@@ -5,7 +5,7 @@ export default function Icons({
   className = '',
   width = 16,
   height = 16,
-  color = 'var(--main-text-color)',
+  color = 'var(--secondary-text-color)',
 }) {
   return (
     <svg className={className} width={width} height={height} fill={color}>

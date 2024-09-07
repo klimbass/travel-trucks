@@ -10,7 +10,9 @@ export default function AppBar() {
     <>
       <nav className={css.boxBar}>
         <div className={css.logo}>
-          <img src={logo} alt="Logo" />
+          <Link to={'/'}>
+            <img src={logo} alt="Logo" />
+          </Link>
         </div>
         <Link
           className={clsx(css.link, location.pathname === '/' && css.active)}

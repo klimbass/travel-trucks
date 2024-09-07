@@ -17,7 +17,7 @@
   padding-left: 64px;
 }
 .title {
-  font-family: Inter, sans-serif;
+  font-family: var(--headers-font);
   font-size: 48px;
   line-height: 0.67;
   font-weight: 600;

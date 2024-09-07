@@ -1,32 +1,13 @@
+import React, { useRef } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useEffect, useId } from 'react';
+import { useId } from 'react';
 import * as Yup from 'yup';
 import 'react-datepicker/dist/react-datepicker.css';
-import DatePicker from 'react-datepicker';
 import { Button } from '@mui/material';
 import css from './BookingForm.module.css';
-import { toast } from 'react-toastify';
-
-const DateRangePicker = ({ field, form }) => {
-  const { setFieldValue } = form;
-  const { name, value } = field;
-
-  return (
-    <DatePicker
-      selectsRange
-      startDate={value[0]}
-      endDate={value[1]}
-      onChange={dates => {
-        setFieldValue(name, dates);
-      }}
-      isClearable={true}
-      dateFormat="dd/MM/YYYY"
-      placeholderText="Booking date*"
-      className={css.formField}
-      style={{ width: '100%' }}
-    />
-  );
-};
+import CalendarInput from './CalendarInput.jsx';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const formatDate = date => {
   if (date instanceof Date) {
@@ -46,8 +27,11 @@ const BookingSchema = Yup.object().shape({
   email: Yup.string().email('Must be a valid email!').required('Required'),
   bookingDate: Yup.array()
     .of(Yup.date().nullable())
-    .required()
-    .min(2, 'Choose two dates for start and finish rent'),
+    .test(
+      'dates-required',
+      'Please select both start and end dates',
+      value => value[0] !== null && value[1] !== null
+    ),
   comment: Yup.string().min(3, 'Too short').max(256, 'Too long'),
 });
 
@@ -62,6 +46,7 @@ export default function BookingForm() {
   const nameFieldId = useId();
   const emailFieldId = useId();
   const commentFieldId = useId();
+  const toastIdRef = useRef(null);
 
   const handleSubmit = (values, actions) => {
     const name = values.name;
@@ -69,76 +54,115 @@ export default function BookingForm() {
     const bookingDateStart = formatDate(values.bookingDate[0]);
     const bookingDateEnd = formatDate(values.bookingDate[1]);
     const bookingDate = `${bookingDateStart} - ${bookingDateEnd}`;
-    console.log(`Name: ${name}, Email: ${email}, Date: ${bookingDate}`);
 
-    toast.success(`Name: ${name}, Email: ${email}, Date: ${bookingDate}`);
+    toastIdRef.current = toast.success(
+      `Name: ${name}, Email: ${email}, Date: ${bookingDate}`,
+      {
+        autoClose: false,
+      }
+    );
     actions.resetForm();
   };
-  const handleError = er => {
-    console.log(er);
+  const handleFieldClick = ev => {
+    if (toastIdRef.current) {
+      toast.dismiss(toastIdRef.current);
+      toastIdRef.current = null;
+    }
   };
 
   return (
     <div className={css.formBox}>
-      <h3>Book your campervan now</h3>
-      <p>Stay connected! We are always ready to help you.</p>
+      <div>
+        <h3>Book your campervan now</h3>
+        <p>Stay connected! We are always ready to help you.</p>
+      </div>
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
         validationSchema={BookingSchema}
-        error={handleError}
       >
-        <Form className={css.form}>
-          <label htmlFor={nameFieldId} />
-          <Field
-            type="text"
-            name="name"
-            id={nameFieldId}
-            placeholder="Name*"
-            className={css.formField}
-          />
-          <ErrorMessage name="name" component="span" />
+        {({ errors, touched, handleSubmit, validateForm, setTouched }) => {
+          const handleCustomSubmit = async e => {
+            e.preventDefault();
 
-          <label htmlFor={emailFieldId} />
-          <Field
-            type="email"
-            name="email"
-            id={emailFieldId}
-            placeholder="Email*"
-            className={css.formField}
-          />
-          <ErrorMessage name="email" component="span" />
+            setTouched({
+              name: true,
+              email: true,
+              bookingDate: true,
+            });
+            const formErrors = await validateForm();
 
-          <div>
-            <label htmlFor="bookingDate"></label>
-            <Field name="bookingDate" component={DateRangePicker} />
-            <ErrorMessage
-              name="bookingDate"
-              component="div"
-              className="error"
-            />
-          </div>
+            if (Object.keys(formErrors).length > 0) {
+              if (formErrors) {
+                toastIdRef.current = toast.error(
+                  `Please fill in all required fields (*)`,
+                  {
+                    autoClose: false,
+                  }
+                );
+              }
+            } else {
+              handleSubmit();
+            }
+          };
 
-          <label htmlFor={commentFieldId} />
-          <Field
-            as="textarea"
-            name="message"
-            id={commentFieldId}
-            rows="5"
-            placeholder="Comment"
-            className={css.formField}
-          />
-          <ErrorMessage name="message" component="span" />
+          return (
+            <Form
+              className={css.form}
+              onSubmit={handleCustomSubmit}
+              onClick={handleFieldClick}
+            >
+              <Field
+                type="text"
+                name="name"
+                id={nameFieldId}
+                placeholder="Name*"
+                className={
+                  touched.name && errors.name
+                    ? `${css.formField} ${css.errorField}`
+                    : css.formField
+                }
+              />
 
-          <Button
-            type="submit"
-            variant="prima"
-            sx={{ margin: '0 auto', padding: '16px 60px' }}
-          >
-            Send
-          </Button>
-        </Form>
+              <Field
+                type="email"
+                name="email"
+                id={emailFieldId}
+                placeholder="Email*"
+                className={
+                  touched.email && errors.email
+                    ? `${css.formField} ${css.errorField}`
+                    : css.formField
+                }
+              />
+
+              <CalendarInput />
+
+              <Field
+                as="textarea"
+                name="comment"
+                id={commentFieldId}
+                rows="5"
+                placeholder="Comment"
+                className={css.formField}
+              />
+
+              <Button
+                type="submit"
+                variant="prima"
+                sx={{
+                  margin: '0 auto',
+                  padding: '16px 60px',
+                  marginTop: '10px',
+                }}
+              >
+                Send
+              </Button>
+            </Form>
+          );
+        }}
       </Formik>
+      <ToastContainer />
     </div>
   );
 }

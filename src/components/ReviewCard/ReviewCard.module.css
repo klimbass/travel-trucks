@@ -15,8 +15,8 @@
   line-height: 60px;
 }
 .name {
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-family: var(--headers-font);
+  font-size: var(--body-font);
   line-height: 1.5;
   color: var(--main-text-color);
   display: flex;
@@ -40,6 +40,7 @@
 .comment {
   margin-top: 16px;
   color: var(--secondary-text-color);
-  font-size: 16px;
+  font-family: var(--body-font);
+  font-size: var(--body-font);
   line-height: 1.5;
 }

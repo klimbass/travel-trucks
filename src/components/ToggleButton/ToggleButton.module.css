@@ -1,12 +1,12 @@
 .btn {
   background-color: transparent;
-  color: var(--main-text-color);
+  color: var(--secondary-text-color);
   border: 1px solid var(--gray-light-color);
   padding: 16px 18px;
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-family: var(--button-font);
+  font-size: var(--base-font-size);
   line-height: 1.5;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: capitalize;
   cursor: pointer;
   border-radius: 12px;

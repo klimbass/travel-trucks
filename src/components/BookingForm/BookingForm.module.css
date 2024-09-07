@@ -4,12 +4,18 @@
   border: 1px solid var(--gray-light-color);
   padding: 44px;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .form {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
+  width: 100%;
+  padding: 0 14px;
 }
 
 .formField {
@@ -19,8 +25,19 @@
   background-color: var(--inputs-color);
   padding: 18px;
   outline: none;
-  color: var(--main-text-color);
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  color: var(--secondary-text-color);
+  font-family: var(--body-font);
+  font-size: var(--base-font-size);
   line-height: 1.5;
+  margin: 0;
+  width: 100%;
+  resize: none;
+}
+.dateContainer {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.errorField {
+  background-color: var(--input-error);
 }
