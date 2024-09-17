@@ -6,7 +6,6 @@ import css from './AsidePanel.module.css';
 import { Button } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { delAllFilters } from '../../redux/filtersSlice.js';
-import { getStatusFilter } from '../../redux/selectors.js';
 
 export default function AsidePanel({ items }) {
   const [itemsDef, setItemsDef] = useState([]);
@@ -31,7 +30,7 @@ export default function AsidePanel({ items }) {
       <Button
         type="button"
         variant="shane"
-        sx={{ width: '180px' }}
+        sx={{ width: '180px', margin: '0 auto' }}
         onClick={handleClearFilters}
       >
         Reset

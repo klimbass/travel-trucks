@@ -31,7 +31,8 @@ const BookingSchema = Yup.object().shape({
       'dates-required',
       'Please select both start and end dates',
       value => value[0] !== null && value[1] !== null
-    ),
+    )
+    .required('Required'),
   comment: Yup.string().min(3, 'Too short').max(256, 'Too long'),
 });
 
@@ -82,6 +83,8 @@ export default function BookingForm() {
         validationSchema={BookingSchema}
       >
         {({ errors, touched, handleSubmit, validateForm, setTouched }) => {
+          console.log(errors);
+
           const handleCustomSubmit = async e => {
             e.preventDefault();
 

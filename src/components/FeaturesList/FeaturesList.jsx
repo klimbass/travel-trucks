@@ -9,7 +9,7 @@ export default function FeaturesList({ features, item }) {
           return (
             <li key={`${item.name}${key}${item.id}`} className={css.feature}>
               <Icons iconName={`icon-${key}`} width={20} height={20} />
-              {key}
+              <span className={css.text}>{key}</span>
             </li>
           );
         })}

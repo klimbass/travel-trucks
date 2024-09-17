@@ -23,7 +23,7 @@ export default function TruckCard({ item }) {
     localStorage.setItem('favorites', JSON.stringify(favorites));
   };
 
-  const className = clsx({ [css.iconFav]: isFavour });
+  const className = clsx(css.iconCursor, { [css.iconFav]: isFavour });
 
   const features = Object.keys(item).filter(key => item[key] === true);
   const [country, city] = item.location.split(', ');
@@ -42,11 +42,11 @@ export default function TruckCard({ item }) {
         className={css.truckImg}
         src={item.gallery[0].thumb}
         alt={`Travel truck ${item.name}`}
-        width={292}
-        height={320}
+        // width={252}
+        // height={300}
       />
       <div className={css.desc}>
-        <div>
+        <div className={css.titleRat}>
           <h2 className={css.title}>{item.name}</h2>
           <div className={css.boxRatMap}>
             <div className={css.rating}>
@@ -76,8 +76,8 @@ export default function TruckCard({ item }) {
         </div>
         <div className={css.description}>{item.description}</div>
         <FeaturesList features={features} item={item} />
-        <Link to={`/catalog/${item.id}/features`}>
-          <Button variant="shane">Show more</Button>
+        <Link to={`/catalog/${item.id}/features`} className={css.buttonWrap}>
+          <Button variant="showMore">Show more</Button>
         </Link>
       </div>
     </div>

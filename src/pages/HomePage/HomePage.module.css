@@ -1,6 +1,6 @@
 .boxHomePage {
   height: calc(100vh - 72px);
-  width: 100%;
+  /* width: 100%; */
 
   background-image: url('../../img/heroImg/hero@x2.jpg');
   background-size: cover;

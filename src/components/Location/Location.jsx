@@ -36,6 +36,10 @@ const colourStyles = {
     backgroundColor: 'var(--inputs-color  )',
     display: 'flex',
     alignItems: 'center',
+    '@media (min-width: 576px) and (max-width: 768px)': {
+      padding: '4px 20px',
+      borderRadius: '12px',
+    },
   }),
   dropdownIndicator: () => ({
     display: 'none',

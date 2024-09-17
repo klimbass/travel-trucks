@@ -8,7 +8,7 @@ export default function VehicleType() {
 
       <div className={css.checkBox}>
         <RadioButton name={'panelTruck'} label={'Van'} />
-        <RadioButton name={'fullyintegrated'} label={'Fully Integrated'} />
+        <RadioButton name={'fullyIntegrated'} label={'Fully Integrated'} />
         <RadioButton name={'alcove'} label={'Alcove'} />
       </div>
     </div>

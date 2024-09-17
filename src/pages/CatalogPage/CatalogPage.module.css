@@ -1,8 +1,15 @@
 .wrap {
   display: flex;
   flex-direction: row;
-  gap: 52px;
+  gap: 42px;
   padding: 40px 64px;
   justify-content: space-around;
   width: 100%;
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .wrap {
+    flex-direction: column;
+    padding: 20px 32px;
+  }
 }

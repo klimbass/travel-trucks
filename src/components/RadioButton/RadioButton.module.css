@@ -13,6 +13,7 @@
   transition: border-color 250ms linear;
   display: flex;
   flex-direction: column;
+  gap: 4px;
   justify-content: space-between;
   align-items: center;
   width: 112px;

@@ -10,13 +10,19 @@ export default function ToggleButton({ name }) {
   const dispatch = useDispatch();
 
   const classList = clsx(css.btn, { [css.active]: isActive });
+  const classListIcon = clsx(css.icon, { [css.active]: isActive });
   const handleToggle = () => {
     dispatch(toggleFilter(name));
   };
 
   return (
     <button className={classList} onClick={handleToggle}>
-      <Icons iconName={`icon-${name}`} width={32} height={32} />
+      <Icons
+        iconName={`icon-${name}`}
+        className={classListIcon}
+        width={32}
+        height={32}
+      />
       {name}
     </button>
   );

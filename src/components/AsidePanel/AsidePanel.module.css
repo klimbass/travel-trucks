@@ -10,3 +10,10 @@
   line-height: 1.5;
   color: var(--secondary-text-color);
 }
+@media (min-width: 576px) and (max-width: 768px) {
+  .asidePanel {
+    width: 100%;
+    gap: 16px;
+    align-items: start;
+  }
+}
