@@ -73,7 +73,7 @@ export default function BookingForm() {
 
   return (
     <div className={css.formBox}>
-      <div>
+      <div className={css.title}>
         <h3>Book your campervan now</h3>
         <p>Stay connected! We are always ready to help you.</p>
       </div>
@@ -152,7 +152,7 @@ export default function BookingForm() {
 
               <Button
                 type="submit"
-                variant="prima"
+                variant="shane"
                 sx={{
                   margin: '0 auto',
                   padding: '16px 60px',

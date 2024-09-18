@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 24px;
   margin-bottom: 52px;
+  width: 100%;
 }
 
 .title {
@@ -62,4 +63,17 @@
   font-size: var(--base-font-size);
   line-height: 1.5;
   color: var(--secondary-text-color);
+}
+@media (max-width: 768px) {
+  .swiper {
+    width: 100%;
+  }
+
+  .imgThumb {
+    overflow: auto;
+    border-radius: 4px;
+    height: 100%;
+    max-width: 100%;
+    object-position: 0;
+  }
 }

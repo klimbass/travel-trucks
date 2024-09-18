@@ -17,12 +17,7 @@ export default function ToggleButton({ name }) {
 
   return (
     <button className={classList} onClick={handleToggle}>
-      <Icons
-        iconName={`icon-${name}`}
-        className={classListIcon}
-        width={32}
-        height={32}
-      />
+      <Icons iconName={`icon-${name}`} className={classListIcon} />
       {name}
     </button>
   );

@@ -12,7 +12,7 @@ export default function Home() {
         </h2>
 
         <Link to="/catalog">
-          <Button variant="prima" sx={{ padding: '16px 44px' }}>
+          <Button variant="shane" sx={{ padding: '16px 44px' }}>
             View Now
           </Button>
         </Link>

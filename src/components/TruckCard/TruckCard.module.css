@@ -9,10 +9,8 @@
   box-shadow: var(--box-shadow-light);
 }
 .truckImg {
-  /* flex-shrink: 0; */
   border-radius: 4px;
   max-width: 252px;
-  /* max-height: 320px; */
   overflow: hidden;
   object-fit: cover;
 }
@@ -23,11 +21,6 @@
   flex-direction: column;
   justify-content: space-between;
 }
-/* .titleRat {
-  display: flex;
-  flex-direction: column;
-  max-width: 350px;
-} */
 
 .title {
   color: var(--main-text-color);
@@ -44,8 +37,6 @@
   display: flex;
   flex-direction: row;
   gap: 12px;
-  /* width: 250px;
-  justify-content: start; */
 }
 .rating {
   display: flex;
@@ -99,27 +90,17 @@
 
 @media (min-width: 576px) and (max-width: 768px) {
   .card {
-    position: relative;
     padding: 0px;
     gap: 0;
     font-size: var(--base-font-size-up-768);
     max-height: 184px;
   }
   .truckImg {
-    flex-shrink: 0;
     border-radius: 0;
     width: 182px;
     height: 182px;
-    overflow: hidden;
-    object-fit: cover;
-    /* margin-bottom: 30px; */
   }
   .desc {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* max-width: 69%; */
     max-width: calc(100% - 182px);
     padding: 12px;
   }
@@ -129,16 +110,9 @@
     max-width: 70%;
   }
   .title {
-    color: var(--main-text-color);
-    /* font-family: var(--headers-font); */
-    /* font-weight: 550; */
     margin-bottom: 4px;
     font-size: var(--heading-font-size-up-768);
     line-height: 1.1;
-    /* width: 60%; */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-shadow: var(--text-title-shadow);
   }
   .boxRatMap {
     flex-direction: column;
@@ -147,31 +121,20 @@
   .description {
     visibility: hidden;
     line-height: 6px;
-    /* font-size: var(--base-font-size-up-768);
-    max-width: 250px; */
   }
   .iconCursor {
     width: 16px;
   }
   .topic {
-    position: absolute;
     top: 10px;
     right: 12px;
-    display: flex;
-    gap: 10px;
-    font-weight: 500;
-    color: var(--secondary-text-color);
   }
   .price {
     position: absolute;
     top: 100%;
     right: 0px;
   }
-  .heart {
-    border: none;
-    background-color: transparent;
-    padding: 2px 0 0 0;
-  }
+
   .buttonWrap {
     margin: 0 auto;
     position: absolute;

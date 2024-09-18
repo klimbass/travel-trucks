@@ -18,3 +18,17 @@
   flex-direction: row;
   gap: 8px;
 }
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .vehicleTypeBox {
+    gap: 20px;
+    width: 100%;
+    font-size: var(--heading-font-size-up-768);
+  }
+  .vehicleTypeBox::after {
+    top: 34px;
+  }
+  .checkBox {
+    gap: 4px;
+  }
+}

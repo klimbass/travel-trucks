@@ -41,3 +41,29 @@
 .errorField {
   background-color: var(--input-error);
 }
+
+@media (max-width: 768px) {
+  .formBox {
+    padding: 24px;
+    text-align: center;
+    gap: 16px;
+  }
+  .title h3 {
+    color: var(--secondary-text-color);
+    font-size: var(--heading-font-size-up-768);
+  }
+  .title p {
+    font-size: var(--base-font-size-up-768);
+  }
+  .form {
+    gap: 10px;
+    width: 100%;
+    padding: 0;
+  }
+  .formField {
+    border-radius: 6px;
+    padding: 14px;
+    color: var(--secondary-text-color);
+    font-size: var(--base-font-size-up-768);
+  }
+}

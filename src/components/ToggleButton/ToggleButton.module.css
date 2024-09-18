@@ -20,18 +20,9 @@
   height: 96px;
 }
 .btn::after {
-  /* content: ' ';
-  position: absolute;
-  background: linear-gradient(to right, rgba(252, 1, 1, 0), rgb(122, 2, 251));
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  z-index: -1; */
-  /* opacity: 0.8; */
   content: ' ';
   position: absolute;
   top: 10%;
-  /* left: -55%; */
   left: 30%;
   border-radius: 8px 20px;
   width: 40%;
@@ -43,15 +34,17 @@
     #ff4c4c41,
     #ffffff00
   );
-  /* transform: rotate(45deg); */
-  /* transition: left 0.5s ease-in-out; */
   transition: opacity 0.5s ease-in-out;
 
   z-index: -1;
   overflow: hidden;
   opacity: 0;
 }
-
+.icon {
+  width: 32px;
+  height: 32px;
+  fill: var(--secondary-text-color);
+}
 .active {
   border-color: var(--button-color);
   color: var(--button-color);
@@ -59,27 +52,24 @@
   font-weight: 500;
 }
 .active.btn::after {
-  /* left: 25%; */
   opacity: 1;
 }
 @media (min-width: 576px) and (max-width: 768px) {
   .btn {
-    /* background-color: transparent;
-    color: var(--secondary-text-color);
-    border: 1px solid var(--gray-light-color); */
     padding: 8px 10px;
-    font-family: var(--button-font);
     font-size: var(--base-font-size-up-768);
     line-height: 1.1;
-    text-transform: capitalize;
-    cursor: pointer;
     border-radius: 4px;
-    transition: border-color 250ms linear;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     max-width: 88px;
     max-height: 70px;
+  }
+  .btn::after {
+    top: 7%;
+    border-radius: 4px 12px;
+  }
+  .icon {
+    width: 26px;
+    height: 26px;
   }
 }

@@ -10,6 +10,7 @@ export default function RadioButton({ name, label }) {
   const setFilter = useSelector(selectorGetFormFilter);
 
   const classList = clsx(css.btn, { [css.active]: name === setFilter });
+  const classListIcon = clsx(css.icon, { [css.active]: name === setFilter });
   const dispatch = useDispatch();
 
   const handleButtonClick = () => {
@@ -18,7 +19,7 @@ export default function RadioButton({ name, label }) {
 
   return (
     <button className={classList} onClick={handleButtonClick}>
-      <Icons iconName={`icon-${name}`} width={32} height={32} />
+      <Icons iconName={`icon-${name}`} className={classListIcon} />
       {label}
     </button>
   );

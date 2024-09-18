@@ -21,20 +21,12 @@
 @media (min-width: 576px) and (max-width: 768px) {
   .vehEqBox {
     gap: 20px;
-    position: relative;
     font-size: var(--heading-font-size-up-768);
   }
   .vehEqBox::after {
-    content: ' ';
-    position: absolute;
     top: 34px;
-    background-color: var(--gray-light-color);
-    height: 1px;
-    width: 100%;
   }
-  envList {
-    display: flex;
-    flex-wrap: wrap;
+  .envList {
     gap: 4px;
   }
 }

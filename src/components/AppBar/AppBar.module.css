@@ -23,3 +23,11 @@
 .link.active {
   color: var(--button-color);
 }
+
+@media (max-width: 768px) {
+  .logo {
+    left: 24px;
+    translate: 0 -50%;
+    width: 110px;
+  }
+}

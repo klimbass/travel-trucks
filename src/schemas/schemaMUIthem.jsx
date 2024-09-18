@@ -20,6 +20,12 @@ const theme = createTheme({
             '&:hover': {
               borderColor: 'var(--button-hover-color)',
             },
+            '@media (min-width: 576px) and (max-width: 768px)': {
+              padding: '12px 18px',
+              fontSize: 'var(--heading-font-size-up-768)',
+              lineHeight: 1,
+              borderRadius: '8px',
+            },
           },
         },
         {
