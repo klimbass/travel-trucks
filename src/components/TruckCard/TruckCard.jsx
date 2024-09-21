@@ -42,8 +42,6 @@ export default function TruckCard({ item }) {
         className={css.truckImg}
         src={item.gallery[0].thumb}
         alt={`Travel truck ${item.name}`}
-        // width={252}
-        // height={300}
       />
       <div className={css.desc}>
         <div className={css.titleRat}>

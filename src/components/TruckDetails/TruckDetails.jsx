@@ -53,12 +53,7 @@ export default function TruckDetails({ item }) {
         >
           {item.gallery.map(gal => (
             <SwiperSlide key={gal.thumb}>
-              <img
-                className={css.imgThumb}
-                src={gal.thumb}
-                alt={item.name}
-                // width={350}
-              />
+              <img className={css.imgThumb} src={gal.thumb} alt={item.name} />
             </SwiperSlide>
           ))}
         </Swiper>

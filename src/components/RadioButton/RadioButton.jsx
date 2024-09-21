@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import css from './RadioButton.module.css';
 import clsx from 'clsx';
 import Icons from '../../img/Icons/Icons.jsx';

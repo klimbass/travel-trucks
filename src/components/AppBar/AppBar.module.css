@@ -24,6 +24,21 @@
   color: var(--button-color);
 }
 
+.burger {
+  margin: 0;
+  line-height: 0;
+  margin-left: auto;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 250ms linear;
+}
+.burger:hover {
+  background-color: transparent;
+}
+.burgerActive {
+  transform: rotate(90deg);
+}
 @media (max-width: 768px) {
   .logo {
     left: 24px;
