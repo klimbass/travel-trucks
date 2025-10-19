@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 
 export default function Catalog() {
   const { items, isLoading, error } = useSelector(getTrucks);
+  console.log(`Items in Catalog Page: ${items.length}`);
 
   const itemsListWithFav = items => {
     let favorites = JSON.parse(window.localStorage.getItem('favorites')) || [];
