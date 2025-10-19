@@ -11,7 +11,7 @@ export default function AppBar() {
   const location = useLocation();
   const isMobile = useMediaQuery('(max-width:576px)');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const handleChangeModal = () => {
+  const handleChangeModal = e => {
     setIsModalOpen(!isModalOpen);
   };
 

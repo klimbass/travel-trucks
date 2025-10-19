@@ -101,6 +101,9 @@ export default function Location({ items }) {
     const [city, country] = selectedOption.value.split(',');
     dispatch(setNameFilter({ location: city.trim() }));
   };
+  console.log('Items:', items.length);
+  console.log('LocationList:', locationList.length);
+  console.log('Selected:', selectedLocation);
 
   return (
     <div className={style.container}>

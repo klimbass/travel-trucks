@@ -26,10 +26,15 @@ export default function ModalMobile({ handleChangeModal, isModalOpen }) {
       console.log(document.body.style.overflow);
     };
   }, [isModalOpen]);
+  const handleContentClick = e => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log('Warum?');
+  };
 
   return (
-    <div className={classListWrap}>
-      <div className={classList}>
+    <div className={classListWrap} onClick={handleChangeModal}>
+      <div className={classList} onClick={handleContentClick}>
         <h4>Menu</h4>
         <NavLink
           to="/"
