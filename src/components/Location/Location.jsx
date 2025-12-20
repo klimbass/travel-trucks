@@ -82,28 +82,17 @@ const colourStyles = {
   singleValue: styles => ({ ...styles }),
 };
 
-export default function Location({ items }) {
+export default function Location({ locationList }) {
   const selectedLocation = useSelector(selectorGetLocation);
   const selectedOption = selectedLocation
     ? { value: selectedLocation, label: selectedLocation }
     : null;
-  const locationList = items
-    .map(item => {
-      const [country, city] = item.location.split(', ');
-      return { value: `${city}, ${country}`, label: `${city}, ${country}` };
-    })
-    .filter(
-      (location, index, self) =>
-        index === self.findIndex(l => l.value === location.value)
-    );
+
   const dispatch = useDispatch();
   const handleOnChange = selectedOption => {
     const [city, country] = selectedOption.value.split(',');
     dispatch(setNameFilter({ location: city.trim() }));
   };
-  console.log('Items:', items.length);
-  console.log('LocationList:', locationList.length);
-  console.log('Selected:', selectedLocation);
 
   return (
     <div className={style.container}>

@@ -6,10 +6,11 @@ import CatalogList from '../../components/CatalogList/CatalogList.jsx';
 import AsidePanel from '../../components/AsidePanel/AsidePanel.jsx';
 import { CircularProgress } from '@mui/material';
 import { toast } from 'react-toastify';
+import { selectAllCities } from '../../redux/selectors.js';
 
 export default function Catalog() {
   const { items, isLoading, error } = useSelector(getTrucks);
-  console.log(`Items in Catalog Page: ${items.length}`);
+  const cities = useSelector(selectAllCities);
 
   const itemsListWithFav = items => {
     let favorites = JSON.parse(window.localStorage.getItem('favorites')) || [];
@@ -39,7 +40,7 @@ export default function Catalog() {
   return (
     <div className={css.wrap}>
       {isLoading && !error && <CircularProgress color="primary" />}
-      <AsidePanel items={items} />
+      <AsidePanel items={items} cities={cities} />
       <CatalogList
         pItems={paginationItems}
         loadMore={loadMore}

@@ -7,7 +7,7 @@ import { Button } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { delAllFilters } from '../../redux/filtersSlice.js';
 
-export default function AsidePanel({ items }) {
+export default function AsidePanel({ items, cities }) {
   const [itemsDef, setItemsDef] = useState([]);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function AsidePanel({ items }) {
 
   return (
     <div className={css.asidePanel}>
-      <Location items={itemsDef} />
+      <Location locationList={cities} />
       <p className={css.filtersTitle}>Filters</p>
       <VehicleEquipment items={itemsDef} />
       <VehicleType />
