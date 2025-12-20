@@ -5,6 +5,7 @@ const trucksSlice = createSlice({
   name: 'trucks',
   initialState: {
     items: [],
+    allItems: [],
     isLoading: false,
     error: null,
   },
@@ -17,6 +18,10 @@ const trucksSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
+
+        if (state.allItems.length === 0) {
+          state.allItems = action.payload;
+        }
       })
       .addCase(fetchTrucks.rejected, (state, action) => {
         state.isLoading = false;
