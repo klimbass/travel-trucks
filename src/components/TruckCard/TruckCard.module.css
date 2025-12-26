@@ -16,7 +16,7 @@
 }
 
 .desc {
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -89,7 +89,7 @@
 
 /*---------------------------------------------*/
 
-@media (min-width: 576px) and (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
   .card {
     padding: 0px;
     gap: 0;
@@ -121,7 +121,7 @@
   }
   .description {
     visibility: hidden;
-    line-height: 6px;
+    line-height: 0px;
   }
   .iconCursor {
     width: 16px;

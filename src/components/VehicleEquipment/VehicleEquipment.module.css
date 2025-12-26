@@ -18,7 +18,7 @@
   flex-wrap: wrap;
   gap: 8px;
 }
-@media (min-width: 576px) and (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
   .vehEqBox {
     gap: 20px;
     font-size: var(--heading-font-size-up-768);

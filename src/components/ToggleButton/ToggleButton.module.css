@@ -54,7 +54,7 @@
 .active.btn::after {
   opacity: 1;
 }
-@media (min-width: 576px) and (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
   .btn {
     padding: 8px 10px;
     font-size: var(--base-font-size-up-768);

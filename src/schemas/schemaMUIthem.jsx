@@ -83,21 +83,21 @@ const theme = createTheme({
             '&:hover::before': {
               left: '120%',
             },
-            '@media (min-width: 576px) and (max-width: 768px)': {
-              padding: '12px 14px',
+            '@media (max-width: 768px)': {
+              // padding: '12px 14px',
               backgroundColor: 'black',
               fontSize: 'var(--heading-font-size-up-768)',
-              lineHeight: 1,
-              maxWidth: '86px',
-              borderRadius: '8px',
-              '&:hover': {
-                transform: 'scale(1)',
-                boxShadow: 'var(--box-shadow-heavy)',
-                opacity: '1',
-              },
-              '&::before': {
-                display: 'none',
-              },
+              // lineHeight: 1,
+              // maxWidth: '86px',
+              // borderRadius: '8px',
+              // '&:hover': {
+              //   transform: 'scale(1)',
+              //   boxShadow: 'var(--box-shadow-heavy)',
+              //   opacity: '1',
+              // },
+              // '&::before': {
+              //   display: 'none',
+              // },
             },
           },
         },
@@ -139,7 +139,7 @@ const theme = createTheme({
             '&:hover::before': {
               left: '120%',
             },
-            '@media (min-width: 576px) and (max-width: 768px)': {
+            '@media (max-width: 768px)': {
               padding: '12px 14px',
               backgroundColor: 'black',
               fontSize: 'var(--heading-font-size-up-768)',

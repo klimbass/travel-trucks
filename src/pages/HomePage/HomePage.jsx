@@ -1,8 +1,16 @@
 import { Link } from 'react-router-dom';
 import css from './HomePage.module.css';
 import { Button } from '@mui/material';
+import { useEffect } from 'react';
 
 export default function Home() {
+  useEffect(() => {
+    document.documentElement.classList.add('no-scroll');
+
+    return () => {
+      document.documentElement.classList.remove('no-scroll');
+    };
+  }, []);
   return (
     <div className={css.boxHomePage}>
       <div className={css.wrapper}>
