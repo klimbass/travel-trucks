@@ -10,26 +10,24 @@ export default function ModalMobile({ handleChangeModal, isModalOpen }) {
   useEffect(() => {
     if (isModalOpen) {
       document.body.style.overflow = 'hidden';
-      document.documentElement.style.overflow = 'hidden';
-      console.log(document.body.style.overflow);
+      //  document.documentElement.style.overflow = 'hidden';
+      //  console.log(document.body.style.overflow);
     } else {
       document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
-
-      console.log(document.body.style.overflow);
+      // document.documentElement.style.overflow = '';
+      // console.log(document.body.style.overflow);
     }
 
     return () => {
       document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
+      // document.documentElement.style.overflow = '';
 
-      console.log(document.body.style.overflow);
+      // console.log(document.body.style.overflow);
     };
   }, [isModalOpen]);
   const handleContentClick = e => {
     e.preventDefault();
     e.stopPropagation();
-    console.log('Warum?');
   };
 
   return (

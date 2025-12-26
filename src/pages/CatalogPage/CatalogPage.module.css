@@ -7,7 +7,7 @@
   width: 100%;
 }
 
-@media (min-width: 576px) and (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 767px) {
   .wrap {
     flex-direction: column;
     padding: 20px 32px;
