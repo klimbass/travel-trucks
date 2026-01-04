@@ -21,7 +21,7 @@ export default function Features() {
       {error && <p>Something went wrong...</p>}
       {!isLoading && !error && (
         <>
-          <FeaturesList features={features} item={item} />
+          <FeaturesList features={features} item={item} variant="details" />
           <div className={css.vehicleDetails}>
             <h3>Vehicle details</h3>
             <table>

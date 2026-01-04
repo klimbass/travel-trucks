@@ -9,7 +9,6 @@ import { getTruckDetails, getTrucks } from '../../redux/selectors.js';
 import { useSelector } from 'react-redux';
 import css from './ItemDetailsPage.module.css';
 import TruckDetails from '../../components/TruckDetails/TruckDetails.jsx';
-import Features from '../../components/Features/Features.jsx';
 import BookingForm from '../../components/BookingForm/BookingForm.jsx';
 import { CircularProgress } from '@mui/material';
 
