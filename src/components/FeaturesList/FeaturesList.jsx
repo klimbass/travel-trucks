@@ -1,9 +1,10 @@
+import clsx from 'clsx';
 import Icons from '../../img/Icons/Icons.jsx';
 import css from './FeaturesList.module.css';
 
-export default function FeaturesList({ features, item }) {
+export default function FeaturesList({ features, item, variant = 'card' }) {
   return (
-    <ul className={css.features}>
+    <ul className={clsx(css.features, css[variant])}>
       {features.length > 0 &&
         features.map(key => {
           return (

@@ -27,7 +27,6 @@ export default function TruckCard({ item }) {
 
   const features = Object.keys(item).filter(key => item[key] === true);
   const [country, city] = item.location.split(', ');
-  const location = `${city}, ${country}`;
 
   const formattedNumber = item => {
     return new Intl.NumberFormat('uk-UA', {
@@ -49,11 +48,19 @@ export default function TruckCard({ item }) {
           <div className={css.boxRatMap}>
             <div className={css.rating}>
               <Icons iconName="icon-star" className={css.colorStar} />
-              <p>{`${item.rating}/(${item.reviews.length} Reviews)`}</p>
+              <p>
+                <span className={css.ratingLevel}>{`${item.rating}`}</span>
+                <span
+                  className={css.ratingReviews}
+                >{`/(${item.reviews.length} Reviews)`}</span>
+              </p>
             </div>
             <div className={css.rating}>
               <Icons iconName="icon-map" />
-              <p>{location}</p>
+              <p>
+                <span>{city}</span>
+                <span className={css.country}>{country}</span>
+              </p>
             </div>
           </div>
         </div>

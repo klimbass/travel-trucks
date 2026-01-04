@@ -38,3 +38,9 @@
 .vehicleDetails tr {
   border: none;
 }
+
+@media (max-width: 768px) {
+  .featuresBox {
+    padding: 22px 26px;
+  }
+}
